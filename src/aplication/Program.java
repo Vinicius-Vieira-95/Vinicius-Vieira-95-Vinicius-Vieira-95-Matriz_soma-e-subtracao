@@ -32,7 +32,7 @@ public class Program {
 		m1.imprimirMatriz();
 		
 		System.out.println();
-		System.out.println("subtraindo as matrizes m1 - m2");
+		System.out.println("Subtraindo as matrizes m1 - m2");
 		m1.subtrairMatriz(m2);
 		m1.imprimirMatriz();
 		

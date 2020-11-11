@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Scanner;
 
-public class Matriz {
+public class Matriz extends Operacoes {
 
 	Integer[][] matriz;
 
@@ -38,7 +38,9 @@ public class Matriz {
 	public void setColuna(int coluna) {
 		this.coluna = coluna;
 	}
-
+	
+	
+	@Override
 	public Integer[][] somaMatriz(Matriz m1) {
 		 Integer[][] m = matriz;
 		for (int i = 0; i < m1.linha; i++) {
@@ -49,24 +51,28 @@ public class Matriz {
 		return m;
 	}
 
+	@Override
 	public void subtrairMatriz(Matriz m1) {
 		for (int i = 0; i < m1.linha; i++) {
 			for (int j = 0; j < m1.coluna; j++) {
 				matriz[i][j] -= m1.getMatriz()[i][j];
 			}
 		}
-	}
+	} 
 
+	@Override
 	public void addNumMatriz() {
 		Scanner scan = new Scanner(System.in);
 		for (int i = 0; i < getLinha(); i++) {
 			for (int j = 0; j < getColuna(); j++) {
+				//atribui um valor no enderço da matriz
 				matriz[i][j] = scan.nextInt();
 			}
 
 		}
 	}
 
+	@Override
 	public void imprimirMatriz() {
 		for (int i = 0; i < linha; i++) {
 			for (int j = 0; j < coluna; j++) {
